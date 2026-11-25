@@ -1,0 +1,14 @@
+{"at":0,"kind":"node","record":{"node":"a","boot":1}}
+{"at":0,"kind":"node","record":{"node":"b","boot":1}}
+{"at":1,"kind":"version","record":{"key":"trace","rev":1,"blocks":{"0":"cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4"}}}
+{"at":2,"kind":"stored","record":{"key":"trace","rev":1,"node":"a","boot":1,"block":0,"text":"old"}}
+{"at":2,"kind":"stored","record":{"key":"trace","rev":1,"node":"b","boot":1,"block":0,"text":"old"}}
+{"at":3,"kind":"commit","record":{"key":"trace","rev":1}}
+{"at":4,"kind":"scrub","record":{"key":"trace","rev":1,"node":"b","boot":1,"block":0,"text":"bad"}}
+{"at":5,"kind":"repair","record":{"id":"r","key":"trace","rev":1,"block":0,"source":"a","target":"b"}}
+{"at":6,"kind":"version","record":{"key":"trace","rev":2,"blocks":{"0":"11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"}}}
+{"at":7,"kind":"stored","record":{"key":"trace","rev":2,"node":"b","boot":1,"block":0,"text":"new"}}
+{"at":8,"kind":"commit","record":{"key":"trace","rev":2}}
+{"at":9,"kind":"result","record":{"id":"r","boot":1,"rev":1,"text":"old"}}
+{"at":10,"kind":"restart","record":{}}
+{"at":11,"kind":"read","record":{"key":"trace","rev":2,"block":0}}

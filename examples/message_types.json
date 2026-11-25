@@ -1,0 +1,13 @@
+[
+  "commit",
+  "inspect",
+  "node",
+  "read",
+  "repair",
+  "restart",
+  "result",
+  "scrub",
+  "stored",
+  "verify",
+  "version"
+]

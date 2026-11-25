@@ -1,0 +1,14 @@
+{"at":0,"kind":"node","record":{"node":"a","boot":1}}
+{"at":0,"kind":"node","record":{"node":"b","boot":1}}
+{"at":1,"kind":"version","record":{"key":"proof","rev":1,"blocks":{"0":"2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"}}}
+{"at":2,"kind":"stored","record":{"key":"proof","rev":1,"node":"a","boot":1,"block":0,"text":"ok"}}
+{"at":2,"kind":"stored","record":{"key":"proof","rev":1,"node":"b","boot":1,"block":0,"text":"ok"}}
+{"at":3,"kind":"commit","record":{"key":"proof","rev":1}}
+{"at":4,"kind":"node","record":{"node":"b","boot":2}}
+{"at":5,"kind":"stored","record":{"key":"proof","rev":1,"node":"b","boot":2,"block":0,"text":"ok"}}
+{"at":6,"kind":"scrub","record":{"key":"proof","rev":1,"node":"b","boot":1,"block":0,"text":"bad"}}
+{"at":7,"kind":"scrub","record":{"key":"proof","rev":1,"node":"a","boot":1,"block":0,"text":"bad"}}
+{"at":8,"kind":"repair","record":{"id":"r2","key":"proof","rev":1,"block":0,"source":"b","target":"a"}}
+{"at":9,"kind":"result","record":{"id":"r2","boot":1,"rev":1,"text":"ok"}}
+{"at":10,"kind":"verify","record":{"id":"r2","text":"ok"}}
+{"at":11,"kind":"inspect","record":{"key":"proof"}}
