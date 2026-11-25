@@ -1,0 +1,563 @@
+{
+  "inspections": [
+    {
+      "at": null,
+      "key": null,
+      "seq": 22
+    }
+  ],
+  "job_order": [
+    "r"
+  ],
+  "jobs": {
+    "r": {
+      "claimed_at": 5,
+      "claimed_seq": 9,
+      "id": "r",
+      "items": [
+        {
+          "attempts": [
+            {
+              "at": 9,
+              "checks": {
+                "current_target_boot_match": true,
+                "current_version_fence": false,
+                "planned_boot_match": true,
+                "same_block_identity": true,
+                "same_object_version": true,
+                "source_verified": true
+              },
+              "recorded": {
+                "boot": 1,
+                "id": "r",
+                "rev": 1,
+                "text": "old"
+              },
+              "seq": 14
+            }
+          ],
+          "block": 0,
+          "checks": {
+            "current_target_boot_match": true,
+            "current_version_fence": false,
+            "planned_boot_match": true,
+            "same_block_identity": true,
+            "same_object_version": true,
+            "source_verified": true
+          },
+          "claimed_at": 5,
+          "claimed_current_rev": 1,
+          "claimed_seq": 9,
+          "completed_seq": 14,
+          "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+          "expected_target_boot": 1,
+          "fence": "r:9:0",
+          "fence_current_rev": 1,
+          "historical": false,
+          "is_stale": true,
+          "is_valid": false,
+          "item_id": "r:trace:r1:b0:b",
+          "key": "trace",
+          "latest_seq": 14,
+          "reason": "检修期间已有更新写入代次发布；旧字节不得覆盖新版本",
+          "reason_code": "new_version_committed",
+          "rev": 1,
+          "source_boot": 1,
+          "source_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+          "source_node": "a",
+          "source_verified": true,
+          "status": "stale",
+          "target_node": "b"
+        }
+      ],
+      "kind": "repair_batch",
+      "latest_seq": 14,
+      "priority": "normal",
+      "status": "stale"
+    }
+  },
+  "last_report": {
+    "current": {
+      "trace": {
+        "readable": true,
+        "rev": 2
+      }
+    },
+    "latest_repair": {
+      "batch_status": "stale",
+      "block": 0,
+      "checks": {
+        "current_target_boot_match": true,
+        "current_version_fence": false,
+        "planned_boot_match": true,
+        "same_block_identity": true,
+        "same_object_version": true,
+        "source_verified": true
+      },
+      "claimed_seq": 9,
+      "completed_seq": 14,
+      "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+      "expected_target_boot": 1,
+      "is_stale": true,
+      "is_valid": false,
+      "item_id": "r:trace:r1:b0:b",
+      "job_id": "r",
+      "key": "trace",
+      "reason": "检修期间已有更新写入代次发布；旧字节不得覆盖新版本",
+      "reason_code": "new_version_committed",
+      "rev": 1,
+      "source_boot": 1,
+      "source_node": "a",
+      "status": "stale",
+      "target_node": "b",
+      "verified_seq": null
+    },
+    "missing_blocks": [],
+    "node_generations": {
+      "a": {
+        "boots": [
+          1
+        ],
+        "current_boot": 1
+      },
+      "b": {
+        "boots": [
+          1
+        ],
+        "current_boot": 1
+      }
+    },
+    "object_filter": null,
+    "objects": [
+      {
+        "blocks": {
+          "0": {
+            "block": 0,
+            "desired_count": 2,
+            "digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+            "lacks_any_valid_copy": false,
+            "missing_copy_nodes": [
+              "a"
+            ],
+            "missing_reason": null,
+            "placement_count": 2,
+            "placement_nodes": [
+              "a",
+              "b"
+            ],
+            "readable": true,
+            "replicas": [
+              {
+                "at": 11,
+                "boot": 1,
+                "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                "node": "a",
+                "observed_digest": null,
+                "reason_code": "replica_file_missing",
+                "seq": 20,
+                "source": "read",
+                "status": "missing",
+                "trusted": false
+              },
+              {
+                "at": 11,
+                "boot": 1,
+                "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                "node": "b",
+                "observed_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                "reason_code": "hash_verified",
+                "seq": 21,
+                "source": "read",
+                "status": "valid",
+                "trusted": true
+              }
+            ],
+            "target_valid_count": 1,
+            "trusted_nodes": [
+              "b"
+            ],
+            "under_replicated": true,
+            "untrusted_replica_nodes": [
+              "a"
+            ],
+            "valid_count": 1
+          }
+        },
+        "blocks_with_missing_replica": [
+          0
+        ],
+        "blocks_without_any_valid_copy": [],
+        "committed": true,
+        "current_rev": 2,
+        "key": "trace",
+        "latest_repair": {
+          "batch_status": "stale",
+          "block": 0,
+          "checks": {
+            "current_target_boot_match": true,
+            "current_version_fence": false,
+            "planned_boot_match": true,
+            "same_block_identity": true,
+            "same_object_version": true,
+            "source_verified": true
+          },
+          "claimed_seq": 9,
+          "completed_seq": 14,
+          "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+          "expected_target_boot": 1,
+          "is_stale": true,
+          "is_valid": false,
+          "item_id": "r:trace:r1:b0:b",
+          "job_id": "r",
+          "key": "trace",
+          "reason": "检修期间已有更新写入代次发布；旧字节不得覆盖新版本",
+          "reason_code": "new_version_committed",
+          "rev": 1,
+          "source_boot": 1,
+          "source_node": "a",
+          "status": "stale",
+          "target_node": "b",
+          "verified_seq": null
+        },
+        "manifest_digest": "38028ef253c3d8022611e5cf52ddca1a55aaea8652a4cd9c78f9588d1b649d5f",
+        "priority": "normal",
+        "readable": true
+      }
+    ],
+    "repair_queue": [
+      {
+        "block": 0,
+        "key": "trace",
+        "priority": "normal",
+        "reason_code": "under_replicated",
+        "rev": 2,
+        "source": "b",
+        "target": "a",
+        "unreadable": false
+      }
+    ],
+    "root": "var/scenario/repair-races-new-version",
+    "scrub_report_count": 1
+  },
+  "locks": {
+    "b|trace|1|0": {
+      "fence": "r:9:0",
+      "item_id": "r:trace:r1:b0:b",
+      "job_id": "r",
+      "status": "stale"
+    }
+  },
+  "nodes": {
+    "a": {
+      "boots": [
+        {
+          "at": 0,
+          "boot": 1,
+          "seq": 1
+        }
+      ],
+      "current_boot": 1,
+      "replicas": {
+        "trace": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": 2,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "historical_generation": false,
+                  "matches": true,
+                  "observed_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "present": true,
+                  "reported_boot": 1,
+                  "seq": 4,
+                  "source": "stored",
+                  "verified": true,
+                  "write_report_only": false
+                },
+                {
+                  "at": 5,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "matches": true,
+                  "observed_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "present": true,
+                  "seq": 10,
+                  "source": "repair_claim",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": 10,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "matches": true,
+                  "observed_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "present": true,
+                  "seq": 17,
+                  "size": 3,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "trace",
+              "last_seq": 17,
+              "node": "a",
+              "rev": 1
+            }
+          },
+          "2": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": 11,
+                  "boot": 1,
+                  "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "matches": false,
+                  "observed_digest": null,
+                  "present": false,
+                  "seq": 20,
+                  "source": "read",
+                  "verified": true
+                }
+              ],
+              "key": "trace",
+              "last_seq": 20,
+              "node": "a",
+              "rev": 2
+            }
+          }
+        }
+      }
+    },
+    "b": {
+      "boots": [
+        {
+          "at": 0,
+          "boot": 1,
+          "seq": 2
+        }
+      ],
+      "current_boot": 1,
+      "replicas": {
+        "trace": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": 2,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "historical_generation": false,
+                  "matches": true,
+                  "observed_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "present": true,
+                  "reported_boot": 1,
+                  "seq": 5,
+                  "source": "stored",
+                  "verified": true,
+                  "write_report_only": false
+                },
+                {
+                  "at": 4,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "historical_generation": false,
+                  "matches": false,
+                  "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+                  "present": true,
+                  "reported_digest": null,
+                  "scrub_range": [
+                    0,
+                    1
+                  ],
+                  "seq": 7,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "at": 9,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "matches": true,
+                  "observed_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "present": true,
+                  "rejected_reason": "new_version_committed",
+                  "seq": 15,
+                  "source": "repair_result_rejected",
+                  "verified": false
+                },
+                {
+                  "actual_scan": true,
+                  "at": 10,
+                  "boot": 1,
+                  "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+                  "matches": false,
+                  "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+                  "present": true,
+                  "seq": 18,
+                  "size": 3,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "trace",
+              "last_seq": 18,
+              "node": "b",
+              "rev": 1
+            }
+          },
+          "2": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": 7,
+                  "boot": 1,
+                  "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "historical_generation": false,
+                  "matches": true,
+                  "observed_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "present": true,
+                  "reported_boot": 1,
+                  "seq": 12,
+                  "source": "stored",
+                  "verified": true,
+                  "write_report_only": false
+                },
+                {
+                  "actual_scan": true,
+                  "at": 10,
+                  "boot": 1,
+                  "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "matches": true,
+                  "observed_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "present": true,
+                  "seq": 19,
+                  "size": 3,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "at": 11,
+                  "boot": 1,
+                  "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "matches": true,
+                  "observed_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+                  "present": true,
+                  "seq": 21,
+                  "size": 3,
+                  "source": "read",
+                  "verified": true
+                }
+              ],
+              "key": "trace",
+              "last_seq": 21,
+              "node": "b",
+              "rev": 2
+            }
+          }
+        }
+      }
+    }
+  },
+  "objects": {
+    "trace": {
+      "current_rev": 2,
+      "missing_history": [],
+      "missing_reasons": {},
+      "priority": "normal",
+      "versions": {
+        "1": {
+          "blocks": {
+            "0": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4"
+          },
+          "commit_seq": 6,
+          "committed": true,
+          "committed_at": 3,
+          "generation": "trace@1:d853e9714874",
+          "key": "trace",
+          "manifest_digest": "d853e97148749b298e51ef3a4c4ea8eeba4dce802d8297e3e7e98cdbf40ac078",
+          "placement": [
+            "a",
+            "b"
+          ],
+          "proposed_at": 1,
+          "proposed_seq": 3,
+          "rev": 1
+        },
+        "2": {
+          "blocks": {
+            "0": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+          },
+          "commit_seq": 13,
+          "committed": true,
+          "committed_at": 8,
+          "generation": "trace@2:38028ef253c3",
+          "key": "trace",
+          "manifest_digest": "38028ef253c3d8022611e5cf52ddca1a55aaea8652a4cd9c78f9588d1b649d5f",
+          "placement": [
+            "a",
+            "b"
+          ],
+          "proposed_at": 6,
+          "proposed_seq": 11,
+          "rev": 2,
+          "targets": [
+            "a",
+            "b"
+          ]
+        }
+      }
+    }
+  },
+  "read_results": [],
+  "restarts": 1,
+  "schema": 1,
+  "scrub_reports": [
+    {
+      "active_boot": 1,
+      "at": 4,
+      "blocks": [
+        {
+          "block": 0,
+          "classification": "current_generation",
+          "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+          "matches": false,
+          "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+          "range": [
+            0,
+            1
+          ]
+        }
+      ],
+      "boot": 1,
+      "byte_range": null,
+      "decision": "isolated_mismatching_replicas",
+      "historical_generation": false,
+      "key": "trace",
+      "node": "b",
+      "object_binding": {
+        "key": "trace",
+        "manifest_digest": "d853e97148749b298e51ef3a4c4ea8eeba4dce802d8297e3e7e98cdbf40ac078",
+        "rev": 1
+      },
+      "range": [
+        0,
+        1
+      ],
+      "reason_code": "digest_mismatch",
+      "requested_interval": [
+        0,
+        1
+      ],
+      "rev": 1,
+      "seq": 8
+    }
+  ],
+  "sequence": 22
+}

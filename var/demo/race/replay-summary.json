@@ -1,0 +1,254 @@
+{
+  "events": 14,
+  "outputs": [
+    {
+      "kind": "node",
+      "result": {
+        "boot": 1,
+        "node": "a",
+        "registered_boot": 1,
+        "scanned": []
+      }
+    },
+    {
+      "kind": "node",
+      "result": {
+        "boot": 1,
+        "node": "b",
+        "registered_boot": 1,
+        "scanned": []
+      }
+    },
+    {
+      "kind": "version",
+      "result": {
+        "blocks": {
+          "0": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4"
+        },
+        "committed": false,
+        "generation": "trace@1:d853e9714874",
+        "key": "trace",
+        "manifest_digest": "d853e97148749b298e51ef3a4c4ea8eeba4dce802d8297e3e7e98cdbf40ac078",
+        "placement": [],
+        "proposed_at": 1,
+        "proposed_seq": 3,
+        "rev": 1
+      }
+    },
+    {
+      "kind": "stored",
+      "result": {
+        "active_boot": 1,
+        "classification": "current",
+        "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+        "node": "a",
+        "reported_boot": 1,
+        "seq": 4
+      }
+    },
+    {
+      "kind": "stored",
+      "result": {
+        "active_boot": 1,
+        "classification": "current",
+        "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+        "node": "b",
+        "reported_boot": 1,
+        "seq": 5
+      }
+    },
+    {
+      "kind": "commit",
+      "result": {
+        "committed": true,
+        "current_rev": 1,
+        "key": "trace",
+        "rev": 1
+      }
+    },
+    {
+      "kind": "scrub",
+      "result": {
+        "active_boot": 1,
+        "at": 4,
+        "blocks": [
+          {
+            "block": 0,
+            "classification": "current_generation",
+            "expected_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+            "matches": false,
+            "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+            "range": [
+              0,
+              1
+            ]
+          }
+        ],
+        "boot": 1,
+        "byte_range": null,
+        "decision": "isolated_mismatching_replicas",
+        "historical_generation": false,
+        "key": "trace",
+        "node": "b",
+        "object_binding": {
+          "key": "trace",
+          "manifest_digest": "d853e97148749b298e51ef3a4c4ea8eeba4dce802d8297e3e7e98cdbf40ac078",
+          "rev": 1
+        },
+        "range": [
+          0,
+          1
+        ],
+        "reason_code": "digest_mismatch",
+        "requested_interval": [
+          0,
+          1
+        ],
+        "rev": 1,
+        "seq": 8
+      }
+    },
+    {
+      "kind": "repair",
+      "result": {
+        "claimed_at": 5,
+        "claimed_seq": 9,
+        "id": "r",
+        "items": [
+          {
+            "attempts": [],
+            "block": 0,
+            "claimed_at": 5,
+            "claimed_current_rev": 1,
+            "claimed_seq": 9,
+            "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+            "expected_target_boot": 1,
+            "fence": "r:9:0",
+            "fence_current_rev": 1,
+            "historical": false,
+            "is_stale": false,
+            "is_valid": false,
+            "item_id": "r:trace:r1:b0:b",
+            "key": "trace",
+            "reason_code": null,
+            "rev": 1,
+            "source_boot": 1,
+            "source_digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+            "source_node": "a",
+            "source_verified": true,
+            "status": "claimed",
+            "target_node": "b"
+          }
+        ],
+        "kind": "repair_batch",
+        "latest_seq": 9,
+        "priority": "normal",
+        "status": "claimed"
+      }
+    },
+    {
+      "kind": "version",
+      "result": {
+        "blocks": {
+          "0": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+        },
+        "committed": false,
+        "generation": "trace@2:38028ef253c3",
+        "key": "trace",
+        "manifest_digest": "38028ef253c3d8022611e5cf52ddca1a55aaea8652a4cd9c78f9588d1b649d5f",
+        "placement": [],
+        "proposed_at": 6,
+        "proposed_seq": 11,
+        "rev": 2
+      }
+    },
+    {
+      "kind": "stored",
+      "result": {
+        "active_boot": 1,
+        "classification": "current",
+        "digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+        "node": "b",
+        "reported_boot": 1,
+        "seq": 12
+      }
+    },
+    {
+      "kind": "commit",
+      "result": {
+        "committed": true,
+        "current_rev": 2,
+        "key": "trace",
+        "rev": 2
+      }
+    },
+    {
+      "kind": "result",
+      "result": {
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": false,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 9,
+        "completed_seq": 14,
+        "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+        "expected_target_boot": 1,
+        "id": "r",
+        "is_stale": true,
+        "is_valid": false,
+        "item_id": "r:trace:r1:b0:b",
+        "key": "trace",
+        "reason": "检修期间已有更新写入代次发布；旧字节不得覆盖新版本",
+        "reason_code": "new_version_committed",
+        "rev": 1,
+        "source_boot": 1,
+        "source_node": "a",
+        "status": "stale",
+        "target_node": "b"
+      }
+    },
+    {
+      "kind": "restart",
+      "result": {
+        "jobs": [],
+        "missing_blocks": [],
+        "restart_seq": 16,
+        "scanned_replicas": 3
+      }
+    },
+    {
+      "kind": "read",
+      "ok": true,
+      "result": {
+        "attempts": [
+          {
+            "node": "a",
+            "status": "missing"
+          },
+          {
+            "node": "b",
+            "status": "valid"
+          }
+        ],
+        "block": 0,
+        "boot": 1,
+        "digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+        "key": "trace",
+        "node": "b",
+        "ok": true,
+        "rev": 2,
+        "size": 3,
+        "text": "new"
+      }
+    }
+  ],
+  "report_json": "var/demo/race/report.json",
+  "report_markdown": "var/demo/race/report.md",
+  "root": "var/demo/race",
+  "scenario": "repair-races-new-version.jsonl"
+}

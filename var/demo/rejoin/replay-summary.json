@@ -1,0 +1,293 @@
+{
+  "events": 14,
+  "outputs": [
+    {
+      "kind": "node",
+      "result": {
+        "boot": 1,
+        "node": "a",
+        "registered_boot": 1,
+        "scanned": []
+      }
+    },
+    {
+      "kind": "node",
+      "result": {
+        "boot": 1,
+        "node": "b",
+        "registered_boot": 1,
+        "scanned": []
+      }
+    },
+    {
+      "kind": "version",
+      "result": {
+        "blocks": {
+          "0": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"
+        },
+        "committed": false,
+        "generation": "proof@1:193c0ce7b838",
+        "key": "proof",
+        "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+        "placement": [],
+        "proposed_at": 1,
+        "proposed_seq": 3,
+        "rev": 1
+      }
+    },
+    {
+      "kind": "stored",
+      "result": {
+        "active_boot": 1,
+        "classification": "current",
+        "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+        "node": "a",
+        "reported_boot": 1,
+        "seq": 4
+      }
+    },
+    {
+      "kind": "stored",
+      "result": {
+        "active_boot": 1,
+        "classification": "current",
+        "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+        "node": "b",
+        "reported_boot": 1,
+        "seq": 5
+      }
+    },
+    {
+      "kind": "commit",
+      "result": {
+        "committed": true,
+        "current_rev": 1,
+        "key": "proof",
+        "rev": 1
+      }
+    },
+    {
+      "kind": "node",
+      "result": {
+        "boot": 2,
+        "node": "b",
+        "registered_boot": 2,
+        "scanned": [
+          {
+            "block": 0,
+            "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "key": "proof",
+            "matches": true,
+            "node": "b",
+            "rev": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "stored",
+      "result": {
+        "active_boot": 2,
+        "classification": "current",
+        "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+        "node": "b",
+        "reported_boot": 2,
+        "seq": 9
+      }
+    },
+    {
+      "kind": "scrub",
+      "result": {
+        "active_boot": 2,
+        "at": 6,
+        "blocks": [
+          {
+            "block": 0,
+            "classification": "historical_generation",
+            "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "matches": false,
+            "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+            "range": [
+              0,
+              1
+            ]
+          }
+        ],
+        "boot": 1,
+        "byte_range": null,
+        "decision": "archived_as_old_node_generation",
+        "historical_generation": true,
+        "key": "proof",
+        "node": "b",
+        "object_binding": {
+          "key": "proof",
+          "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+          "rev": 1
+        },
+        "range": [
+          0,
+          1
+        ],
+        "reason_code": "stale_boot_report",
+        "requested_interval": [
+          0,
+          1
+        ],
+        "rev": 1,
+        "seq": 11
+      }
+    },
+    {
+      "kind": "scrub",
+      "result": {
+        "active_boot": 1,
+        "at": 7,
+        "blocks": [
+          {
+            "block": 0,
+            "classification": "current_generation",
+            "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "matches": false,
+            "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+            "range": [
+              0,
+              1
+            ]
+          }
+        ],
+        "boot": 1,
+        "byte_range": null,
+        "decision": "isolated_mismatching_replicas",
+        "historical_generation": false,
+        "key": "proof",
+        "node": "a",
+        "object_binding": {
+          "key": "proof",
+          "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+          "rev": 1
+        },
+        "range": [
+          0,
+          1
+        ],
+        "reason_code": "digest_mismatch",
+        "requested_interval": [
+          0,
+          1
+        ],
+        "rev": 1,
+        "seq": 13
+      }
+    },
+    {
+      "kind": "repair",
+      "result": {
+        "claimed_at": 8,
+        "claimed_seq": 14,
+        "id": "r2",
+        "items": [
+          {
+            "attempts": [],
+            "block": 0,
+            "claimed_at": 8,
+            "claimed_current_rev": 1,
+            "claimed_seq": 14,
+            "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "expected_target_boot": 1,
+            "fence": "r2:14:0",
+            "fence_current_rev": 1,
+            "historical": false,
+            "is_stale": false,
+            "is_valid": false,
+            "item_id": "r2:proof:r1:b0:a",
+            "key": "proof",
+            "reason_code": null,
+            "rev": 1,
+            "source_boot": 2,
+            "source_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "source_node": "b",
+            "source_verified": true,
+            "status": "claimed",
+            "target_node": "a"
+          }
+        ],
+        "kind": "repair_batch",
+        "latest_seq": 14,
+        "priority": "normal",
+        "status": "claimed"
+      }
+    },
+    {
+      "kind": "result",
+      "result": {
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": true,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 14,
+        "completed_seq": null,
+        "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+        "expected_target_boot": 1,
+        "id": "r2",
+        "is_stale": false,
+        "is_valid": false,
+        "item_id": "r2:proof:r1:b0:a",
+        "key": "proof",
+        "reason": "目标端只确认已写入；在独立校验前不恢复为可信副本",
+        "reason_code": "awaiting_independent_verification",
+        "rev": 1,
+        "source_boot": 2,
+        "source_node": "b",
+        "status": "written_unverified",
+        "target_node": "a"
+      }
+    },
+    {
+      "kind": "verify",
+      "result": {
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": true,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 14,
+        "completed_seq": 18,
+        "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+        "expected_target_boot": 1,
+        "id": "r2",
+        "is_stale": false,
+        "is_valid": true,
+        "item_id": "r2:proof:r1:b0:a",
+        "key": "proof",
+        "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+        "reason_code": "repair_verified",
+        "rev": 1,
+        "source_boot": 2,
+        "source_node": "b",
+        "status": "verified",
+        "target_node": "a",
+        "verified": true
+      }
+    },
+    {
+      "kind": "inspect",
+      "result": {
+        "key": "proof",
+        "report_json": "var/demo/rejoin/reports/inspection.json"
+      }
+    }
+  ],
+  "report_json": "var/demo/rejoin/report.json",
+  "report_markdown": "var/demo/rejoin/report.md",
+  "root": "var/demo/rejoin",
+  "scenario": "late-scrub-after-rejoin.jsonl"
+}

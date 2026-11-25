@@ -1,0 +1,43 @@
+{"at": null, "kind": "node", "record": {"boot": 1, "node": "a"}, "seq": 1}
+{"at": null, "kind": "node", "record": {"boot": 1, "node": "b"}, "seq": 2}
+{"at": null, "kind": "node", "record": {"boot": 1, "node": "c"}, "seq": 3}
+{"at": null, "kind": "version", "record": {"blocks": {"0": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f", "1": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177"}, "generation": null, "key": "process-archive", "rev": 1}, "seq": 4}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "process-archive", "node": "a", "rev": 1, "text": null}, "seq": 5}
+{"at": null, "kind": "stored", "record": {"block": 1, "boot": null, "key": "process-archive", "node": "a", "rev": 1, "text": null}, "seq": 6}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "process-archive", "node": "b", "rev": 1, "text": null}, "seq": 7}
+{"at": null, "kind": "stored", "record": {"block": 1, "boot": null, "key": "process-archive", "node": "b", "rev": 1, "text": null}, "seq": 8}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "process-archive", "node": "c", "rev": 1, "text": null}, "seq": 9}
+{"at": null, "kind": "stored", "record": {"block": 1, "boot": null, "key": "process-archive", "node": "c", "rev": 1, "text": null}, "seq": 10}
+{"at": null, "kind": "commit", "record": {"generation": null, "key": "process-archive", "rev": 1}, "seq": 11}
+{"at": null, "kind": "read", "record": {"block": 0, "key": "process-archive", "ok": true, "rev": 1}, "seq": 12}
+{"at": null, "kind": "read", "record": {"block": 1, "key": "process-archive", "ok": true, "rev": 1}, "seq": 13}
+{"at": null, "kind": "fault", "record": {"block": 0, "key": "process-archive", "node": "c", "rev": 1}, "seq": 14}
+{"at": null, "kind": "read", "record": {"block": 0, "key": "process-archive", "ok": true, "rev": 1}, "seq": 15}
+{"at": null, "kind": "read", "record": {"block": 1, "key": "process-archive", "ok": true, "rev": 1}, "seq": 16}
+{"at": null, "kind": "scrub", "record": {"disk": true, "key": "process-archive", "node": "c", "rev": 1}, "seq": 18}
+{"at": null, "kind": "repair", "record": {"id": "fix-process-archive", "items": [{"block": 0, "key": "process-archive", "rev": 1, "source": "a", "target": "c"}]}, "seq": 20}
+{"at": null, "kind": "read", "record": {"block": 1, "key": "process-archive", "ok": true, "rev": null}, "seq": 21}
+{"at": null, "kind": "result", "record": {"block": 0, "boot": 1, "id": "fix-process-archive", "rev": 1, "text": "synthetic-block-0\n"}, "seq": 23}
+{"at": null, "kind": "inspect", "record": {"key": "process-archive", "scan": false}, "seq": 24}
+{"at": null, "kind": "verify", "record": {"block": 0, "id": "fix-process-archive", "text": "synthetic-block-0\n"}, "seq": 26}
+{"at": null, "kind": "version", "record": {"blocks": {"0": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308"}, "generation": null, "key": "half-finished", "rev": 1}, "seq": 27}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "half-finished", "node": "a", "rev": 1, "text": null}, "seq": 28}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "half-finished", "node": "b", "rev": 1, "text": null}, "seq": 29}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "half-finished", "node": "c", "rev": 1, "text": null}, "seq": 30}
+{"at": null, "kind": "commit", "record": {"generation": null, "key": "half-finished", "rev": 1}, "seq": 31}
+{"at": null, "kind": "fault", "record": {"block": 0, "key": "half-finished", "node": "b", "rev": 1}, "seq": 32}
+{"at": null, "kind": "scrub", "record": {"disk": true, "key": "half-finished", "node": "b", "rev": 1}, "seq": 33}
+{"at": null, "kind": "repair", "record": {"id": "fix-half", "items": [{"block": 0, "key": "half-finished", "rev": 1, "source": "a", "target": "b"}]}, "seq": 35}
+{"at": null, "kind": "result", "record": {"boot": 1, "id": "fix-half", "rev": 1, "text": "half-data"}, "seq": 37}
+{"at": null, "kind": "restart", "record": {}, "seq": 48}
+{"at": null, "kind": "version", "record": {"blocks": {"0": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5"}, "generation": null, "key": "cannot-yet-recover", "rev": 1}, "seq": 49}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "cannot-yet-recover", "node": "a", "rev": 1, "text": null}, "seq": 50}
+{"at": null, "kind": "stored", "record": {"block": 0, "boot": null, "key": "cannot-yet-recover", "node": "b", "rev": 1, "text": null}, "seq": 51}
+{"at": null, "kind": "commit", "record": {"generation": null, "key": "cannot-yet-recover", "rev": 1}, "seq": 52}
+{"at": null, "kind": "fault", "record": {"block": 0, "key": "cannot-yet-recover", "node": "a", "rev": 1}, "seq": 53}
+{"at": null, "kind": "scrub", "record": {"disk": true, "key": "cannot-yet-recover", "node": "a", "rev": 1}, "seq": 54}
+{"at": null, "kind": "fault", "record": {"block": 0, "key": "cannot-yet-recover", "node": "b", "rev": 1}, "seq": 55}
+{"at": null, "kind": "scrub", "record": {"disk": true, "key": "cannot-yet-recover", "node": "b", "rev": 1}, "seq": 56}
+{"at": null, "kind": "restart", "record": {}, "seq": 68}
+{"at": null, "kind": "inspect", "record": {"key": null, "scan": true}, "seq": 80}
+{"at": null, "kind": "inspect", "record": {"key": "cannot-yet-recover", "scan": false}, "seq": 81}

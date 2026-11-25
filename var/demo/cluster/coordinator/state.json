@@ -1,0 +1,1396 @@
+{
+  "fault_injections": [
+    {
+      "at": null,
+      "block": 0,
+      "key": "process-archive",
+      "node": "c",
+      "rev": 1,
+      "seq": 14
+    },
+    {
+      "at": null,
+      "block": 0,
+      "key": "half-finished",
+      "node": "b",
+      "rev": 1,
+      "seq": 32
+    },
+    {
+      "at": null,
+      "block": 0,
+      "key": "cannot-yet-recover",
+      "node": "a",
+      "rev": 1,
+      "seq": 53
+    },
+    {
+      "at": null,
+      "block": 0,
+      "key": "cannot-yet-recover",
+      "node": "b",
+      "rev": 1,
+      "seq": 55
+    }
+  ],
+  "inspections": [
+    {
+      "at": null,
+      "key": "process-archive",
+      "seq": 24
+    },
+    {
+      "at": null,
+      "key": null,
+      "seq": 80
+    },
+    {
+      "at": null,
+      "key": "cannot-yet-recover",
+      "seq": 81
+    }
+  ],
+  "job_order": [
+    "fix-process-archive",
+    "fix-half"
+  ],
+  "jobs": {
+    "fix-half": {
+      "claimed_at": null,
+      "claimed_seq": 34,
+      "id": "fix-half",
+      "items": [
+        {
+          "attempts": [
+            {
+              "at": null,
+              "checks": {
+                "current_target_boot_match": true,
+                "current_version_fence": true,
+                "planned_boot_match": true,
+                "same_block_identity": true,
+                "same_object_version": true,
+                "source_verified": true
+              },
+              "recorded": {
+                "boot": 1,
+                "id": "fix-half",
+                "rev": 1,
+                "text": "half-data"
+              },
+              "seq": 36
+            }
+          ],
+          "block": 0,
+          "checks": {
+            "current_target_boot_match": true,
+            "current_version_fence": true,
+            "planned_boot_match": true,
+            "same_block_identity": true,
+            "same_object_version": true,
+            "source_verified": true
+          },
+          "claimed_at": null,
+          "claimed_current_rev": 1,
+          "claimed_seq": 34,
+          "digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+          "expected_target_boot": 1,
+          "fence": "fix-half:34:0",
+          "fence_current_rev": 1,
+          "historical": false,
+          "is_stale": false,
+          "is_valid": true,
+          "item_id": "fix-half:half-finished:r1:b0:b",
+          "key": "half-finished",
+          "latest_seq": 36,
+          "reason": "重启后直接哈希实际落盘块，摘要与预定块身份一致",
+          "reason_code": "restart_verified_from_actual_disk",
+          "recovery": {
+            "actual_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+            "from_status": "written_unverified"
+          },
+          "result": {
+            "at": null,
+            "boot": 1,
+            "digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+            "rev": 1,
+            "seq": 36
+          },
+          "rev": 1,
+          "source_boot": 1,
+          "source_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+          "source_node": "a",
+          "source_verified": true,
+          "status": "verified",
+          "target_node": "b",
+          "verified_at": null,
+          "verified_seq": 48
+        }
+      ],
+      "kind": "repair_batch",
+      "latest_seq": 36,
+      "priority": "normal",
+      "status": "verified"
+    },
+    "fix-process-archive": {
+      "claimed_at": null,
+      "claimed_seq": 19,
+      "id": "fix-process-archive",
+      "items": [
+        {
+          "attempts": [
+            {
+              "at": null,
+              "checks": {
+                "current_target_boot_match": true,
+                "current_version_fence": true,
+                "planned_boot_match": true,
+                "same_block_identity": true,
+                "same_object_version": true,
+                "source_verified": true
+              },
+              "recorded": {
+                "block": 0,
+                "boot": 1,
+                "id": "fix-process-archive",
+                "rev": 1,
+                "text": "synthetic-block-0\n"
+              },
+              "seq": 22
+            }
+          ],
+          "block": 0,
+          "checks": {
+            "current_target_boot_match": true,
+            "current_version_fence": true,
+            "planned_boot_match": true,
+            "same_block_identity": true,
+            "same_object_version": true,
+            "source_verified": true
+          },
+          "claimed_at": null,
+          "claimed_current_rev": 1,
+          "claimed_seq": 19,
+          "digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+          "expected_target_boot": 1,
+          "fence": "fix-process-archive:19:0",
+          "fence_current_rev": 1,
+          "historical": false,
+          "is_stale": false,
+          "is_valid": true,
+          "item_id": "fix-process-archive:process-archive:r1:b0:c",
+          "key": "process-archive",
+          "latest_seq": 22,
+          "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+          "reason_code": "repair_verified",
+          "result": {
+            "at": null,
+            "boot": 1,
+            "digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+            "rev": 1,
+            "seq": 22
+          },
+          "rev": 1,
+          "source_boot": 1,
+          "source_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+          "source_node": "a",
+          "source_verified": true,
+          "status": "verified",
+          "target_node": "c",
+          "verification": {
+            "at": null,
+            "digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+            "seq": 25
+          },
+          "verified_at": null,
+          "verified_seq": 25
+        }
+      ],
+      "kind": "repair_batch",
+      "latest_seq": 22,
+      "priority": "high",
+      "status": "verified"
+    }
+  },
+  "last_report": {
+    "current": {
+      "cannot-yet-recover": {
+        "readable": false,
+        "rev": 1
+      }
+    },
+    "latest_repair": null,
+    "missing_blocks": [
+      {
+        "block": 0,
+        "details": [
+          {
+            "at": null,
+            "boot": 1,
+            "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+            "node": "a",
+            "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+            "reason_code": "digest_mismatch",
+            "seq": 69,
+            "source": "restart_scan",
+            "status": "corrupt",
+            "trusted": false
+          },
+          {
+            "at": null,
+            "boot": 1,
+            "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+            "node": "b",
+            "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+            "reason_code": "digest_mismatch",
+            "seq": 73,
+            "source": "restart_scan",
+            "status": "corrupt",
+            "trusted": false
+          },
+          {
+            "boot": 1,
+            "node": "c",
+            "reason_code": "no_observation",
+            "status": "absent",
+            "trusted": false
+          }
+        ],
+        "digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+        "key": "cannot-yet-recover",
+        "reason": "预定副本节点上的所有已知字节摘要均与清单不同",
+        "reason_code": "all_placement_replicas_corrupt",
+        "rev": 1
+      }
+    ],
+    "node_generations": {
+      "a": {
+        "boots": [
+          1
+        ],
+        "current_boot": 1
+      },
+      "b": {
+        "boots": [
+          1
+        ],
+        "current_boot": 1
+      },
+      "c": {
+        "boots": [
+          1
+        ],
+        "current_boot": 1
+      }
+    },
+    "object_filter": "cannot-yet-recover",
+    "objects": [
+      {
+        "blocks": {
+          "0": {
+            "block": 0,
+            "desired_count": 2,
+            "digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+            "lacks_any_valid_copy": true,
+            "missing_copy_nodes": [
+              "a",
+              "b"
+            ],
+            "missing_reason": {
+              "code": "all_placement_replicas_corrupt",
+              "message": "预定副本节点上的所有已知字节摘要均与清单不同"
+            },
+            "placement_count": 2,
+            "placement_nodes": [
+              "a",
+              "b"
+            ],
+            "readable": false,
+            "replicas": [
+              {
+                "at": null,
+                "boot": 1,
+                "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                "node": "a",
+                "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+                "reason_code": "digest_mismatch",
+                "seq": 69,
+                "source": "restart_scan",
+                "status": "corrupt",
+                "trusted": false
+              },
+              {
+                "at": null,
+                "boot": 1,
+                "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                "node": "b",
+                "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+                "reason_code": "digest_mismatch",
+                "seq": 73,
+                "source": "restart_scan",
+                "status": "corrupt",
+                "trusted": false
+              },
+              {
+                "boot": 1,
+                "node": "c",
+                "reason_code": "no_observation",
+                "status": "absent",
+                "trusted": false
+              }
+            ],
+            "target_valid_count": 0,
+            "trusted_nodes": [],
+            "under_replicated": true,
+            "untrusted_replica_nodes": [
+              "a",
+              "b",
+              "c"
+            ],
+            "valid_count": 0
+          }
+        },
+        "blocks_with_missing_replica": [
+          0
+        ],
+        "blocks_without_any_valid_copy": [
+          0
+        ],
+        "committed": true,
+        "current_rev": 1,
+        "key": "cannot-yet-recover",
+        "latest_repair": null,
+        "manifest_digest": "e78101d3dfa441804447bd84b39764d0bc68f5dad1482604799b7c72dc293c79",
+        "priority": "normal",
+        "readable": false
+      }
+    ],
+    "repair_queue": [
+      {
+        "block": 0,
+        "key": "cannot-yet-recover",
+        "priority": "normal",
+        "reason_code": "no_verified_source",
+        "rev": 1,
+        "source": null,
+        "target": null,
+        "unreadable": true
+      }
+    ],
+    "root": "var/demo/cluster",
+    "scrub_report_count": 0
+  },
+  "locks": {
+    "b|half-finished|1|0": {
+      "fence": "fix-half:34:0",
+      "item_id": "fix-half:half-finished:r1:b0:b",
+      "job_id": "fix-half",
+      "status": "completed"
+    },
+    "c|process-archive|1|0": {
+      "fence": "fix-process-archive:19:0",
+      "item_id": "fix-process-archive:process-archive:r1:b0:c",
+      "job_id": "fix-process-archive",
+      "status": "completed"
+    }
+  },
+  "nodes": {
+    "a": {
+      "boots": [
+        {
+          "at": null,
+          "boot": 1,
+          "seq": 1
+        }
+      ],
+      "current_boot": 1,
+      "replicas": {
+        "cannot-yet-recover": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": true,
+                  "observed_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "present": true,
+                  "seq": 50,
+                  "size": 9,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": false,
+                  "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+                  "present": true,
+                  "seq": 54,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": false,
+                  "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+                  "present": true,
+                  "seq": 58,
+                  "size": 5,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": false,
+                  "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+                  "present": true,
+                  "seq": 69,
+                  "size": 5,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "cannot-yet-recover",
+              "last_seq": 69,
+              "node": "a",
+              "rev": 1
+            }
+          }
+        },
+        "half-finished": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 28,
+                  "size": 9,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 35,
+                  "source": "repair_claim",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 39,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 59,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 70,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "half-finished",
+              "last_seq": 70,
+              "node": "a",
+              "rev": 1
+            }
+          }
+        },
+        "process-archive": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 5,
+                  "size": 18,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 12,
+                  "size": 18,
+                  "source": "read",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 15,
+                  "size": 18,
+                  "source": "read",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 20,
+                  "source": "repair_claim",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 40,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 60,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 71,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "process-archive",
+              "last_seq": 71,
+              "node": "a",
+              "rev": 1
+            },
+            "1": {
+              "block": 1,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 6,
+                  "size": 18,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 13,
+                  "size": 18,
+                  "source": "read",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 16,
+                  "size": 18,
+                  "source": "read",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 21,
+                  "size": 18,
+                  "source": "read",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 41,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 61,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 72,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "process-archive",
+              "last_seq": 72,
+              "node": "a",
+              "rev": 1
+            }
+          }
+        }
+      }
+    },
+    "b": {
+      "boots": [
+        {
+          "at": null,
+          "boot": 1,
+          "seq": 2
+        }
+      ],
+      "current_boot": 1,
+      "replicas": {
+        "cannot-yet-recover": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": true,
+                  "observed_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "present": true,
+                  "seq": 51,
+                  "size": 9,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": false,
+                  "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+                  "present": true,
+                  "seq": 56,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": false,
+                  "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+                  "present": true,
+                  "seq": 62,
+                  "size": 5,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+                  "matches": false,
+                  "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+                  "present": true,
+                  "seq": 73,
+                  "size": 5,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "cannot-yet-recover",
+              "last_seq": 73,
+              "node": "b",
+              "rev": 1
+            }
+          }
+        },
+        "half-finished": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 29,
+                  "size": 9,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": false,
+                  "observed_digest": "7d504102ea9f669fda73cb2d866dade1735ca9c3395d9612e5cf9008dda9acca",
+                  "present": true,
+                  "seq": 33,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 37,
+                  "source": "repair_result",
+                  "verified": false,
+                  "write_report_only": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 42,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 63,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 74,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "half-finished",
+              "last_seq": 74,
+              "node": "b",
+              "rev": 1
+            }
+          }
+        },
+        "process-archive": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 7,
+                  "size": 18,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 43,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 64,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 75,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "process-archive",
+              "last_seq": 75,
+              "node": "b",
+              "rev": 1
+            },
+            "1": {
+              "block": 1,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 8,
+                  "size": 18,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 44,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 65,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 76,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "process-archive",
+              "last_seq": 76,
+              "node": "b",
+              "rev": 1
+            }
+          }
+        }
+      }
+    },
+    "c": {
+      "boots": [
+        {
+          "at": null,
+          "boot": 1,
+          "seq": 3
+        }
+      ],
+      "current_boot": 1,
+      "replicas": {
+        "cannot-yet-recover": {
+          "1": {}
+        },
+        "half-finished": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 30,
+                  "size": 9,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 45,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 66,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "matches": true,
+                  "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+                  "present": true,
+                  "seq": 77,
+                  "size": 9,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "half-finished",
+              "last_seq": 77,
+              "node": "c",
+              "rev": 1
+            }
+          }
+        },
+        "process-archive": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 9,
+                  "size": 18,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": false,
+                  "observed_digest": "d8a14e9680494002ca63db14f10d0b03da1a00bcf220276c1f82513ae5644cbc",
+                  "present": true,
+                  "seq": 17,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 23,
+                  "source": "repair_result",
+                  "verified": false,
+                  "write_report_only": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 26,
+                  "source": "repair_verify",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 46,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 67,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "matches": true,
+                  "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+                  "present": true,
+                  "seq": 78,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "process-archive",
+              "last_seq": 78,
+              "node": "c",
+              "rev": 1
+            },
+            "1": {
+              "block": 1,
+              "history": [
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 10,
+                  "size": 18,
+                  "source": "stored",
+                  "verified": true
+                },
+                {
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 18,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 47,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 68,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "actual_scan": true,
+                  "at": null,
+                  "boot": 1,
+                  "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "matches": true,
+                  "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+                  "present": true,
+                  "seq": 79,
+                  "size": 18,
+                  "source": "restart_scan",
+                  "verified": true
+                }
+              ],
+              "key": "process-archive",
+              "last_seq": 79,
+              "node": "c",
+              "rev": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "objects": {
+    "cannot-yet-recover": {
+      "current_rev": 1,
+      "missing_history": [
+        {
+          "at": null,
+          "block": 0,
+          "code": "all_placement_replicas_corrupt",
+          "message": "预定副本节点上的所有已知字节摘要均与清单不同",
+          "rev": 1,
+          "since_seq": 57
+        }
+      ],
+      "missing_reasons": {
+        "0": {
+          "at": null,
+          "block": 0,
+          "code": "all_placement_replicas_corrupt",
+          "message": "预定副本节点上的所有已知字节摘要均与清单不同",
+          "rev": 1,
+          "since_seq": 57
+        }
+      },
+      "priority": "normal",
+      "versions": {
+        "1": {
+          "blocks": {
+            "0": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5"
+          },
+          "commit_seq": 52,
+          "committed": true,
+          "committed_at": null,
+          "generation": "cannot-yet-recover@1:e78101d3dfa4",
+          "key": "cannot-yet-recover",
+          "manifest_digest": "e78101d3dfa441804447bd84b39764d0bc68f5dad1482604799b7c72dc293c79",
+          "placement": [
+            "a",
+            "b"
+          ],
+          "proposed_at": null,
+          "proposed_seq": 49,
+          "rev": 1,
+          "targets": [
+            "a",
+            "b"
+          ]
+        }
+      }
+    },
+    "half-finished": {
+      "current_rev": 1,
+      "missing_history": [],
+      "missing_reasons": {},
+      "priority": "normal",
+      "versions": {
+        "1": {
+          "blocks": {
+            "0": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308"
+          },
+          "commit_seq": 31,
+          "committed": true,
+          "committed_at": null,
+          "generation": "half-finished@1:df8858212d76",
+          "key": "half-finished",
+          "manifest_digest": "df8858212d7623180f5b9b1b9de131084c4310f52f9757a45f64e107e9d136c8",
+          "placement": [
+            "a",
+            "b",
+            "c"
+          ],
+          "proposed_at": null,
+          "proposed_seq": 27,
+          "rev": 1,
+          "targets": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      }
+    },
+    "process-archive": {
+      "current_rev": 1,
+      "missing_history": [],
+      "missing_reasons": {},
+      "priority": "high",
+      "versions": {
+        "1": {
+          "blocks": {
+            "0": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+            "1": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177"
+          },
+          "commit_seq": 11,
+          "committed": true,
+          "committed_at": null,
+          "generation": "process-archive@1:3095426c2210",
+          "key": "process-archive",
+          "manifest_digest": "3095426c22104619c35b85a86c02e3d53a0dcf866aaad953f01fbf1a6853cd57",
+          "placement": [
+            "a",
+            "b",
+            "c"
+          ],
+          "proposed_at": null,
+          "proposed_seq": 4,
+          "rev": 1,
+          "targets": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      }
+    }
+  },
+  "read_results": [],
+  "restarts": 2,
+  "schema": 1,
+  "scrub_reports": [],
+  "sequence": 81
+}

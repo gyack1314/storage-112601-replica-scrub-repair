@@ -1,0 +1,512 @@
+{
+  "current": {
+    "cannot-yet-recover": {
+      "readable": false,
+      "rev": 1
+    },
+    "half-finished": {
+      "readable": true,
+      "rev": 1
+    },
+    "process-archive": {
+      "readable": true,
+      "rev": 1
+    }
+  },
+  "demo": {
+    "claimed_blocks": 1,
+    "failover_served_by_node": "a",
+    "initial_read_ok": true,
+    "other_block_during_repair": "synthetic-block-1",
+    "race_repair": "new_version_committed",
+    "rejoin_repair": "repair_verified",
+    "restart_summary": {
+      "jobs": [
+        {
+          "from_status": "written_unverified",
+          "item_id": "fix-half:half-finished:r1:b0:b",
+          "job_id": "fix-half",
+          "reason_code": "restart_verified_from_actual_disk",
+          "status": "verified"
+        }
+      ],
+      "missing_blocks": [],
+      "restart_seq": 38,
+      "scanned_replicas": 9
+    },
+    "scrub_findings": [
+      {
+        "block": 0,
+        "digest": "d8a14e9680494002ca63db14f10d0b03da1a00bcf220276c1f82513ae5644cbc",
+        "matches": false,
+        "node": "c",
+        "present": true
+      },
+      {
+        "block": 1,
+        "digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+        "matches": true,
+        "node": "c",
+        "present": true
+      }
+    ],
+    "unverified_c_status": "written_unverified"
+  },
+  "latest_repair": {
+    "batch_status": "verified",
+    "block": 0,
+    "checks": {
+      "current_target_boot_match": true,
+      "current_version_fence": true,
+      "planned_boot_match": true,
+      "same_block_identity": true,
+      "same_object_version": true,
+      "source_verified": true
+    },
+    "claimed_seq": 34,
+    "completed_seq": null,
+    "digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+    "expected_target_boot": 1,
+    "is_stale": false,
+    "is_valid": true,
+    "item_id": "fix-half:half-finished:r1:b0:b",
+    "job_id": "fix-half",
+    "key": "half-finished",
+    "reason": "重启后直接哈希实际落盘块，摘要与预定块身份一致",
+    "reason_code": "restart_verified_from_actual_disk",
+    "rev": 1,
+    "source_boot": 1,
+    "source_node": "a",
+    "status": "verified",
+    "target_node": "b",
+    "verified_seq": 48
+  },
+  "markdown": "# 副本存储值班记录\n\n\n## 当前已提交版本\n- `cannot-yet-recover`：当前版本 rev=1，暂不能完整读取，优先级=normal\n  - 块 0：有效副本 0/2；可信节点 无；状态 [a/boot1:corrupt；b/boot1:corrupt；c/boot1:absent]\n    - 缺失原因：`all_placement_replicas_corrupt` 预定副本节点上的所有已知字节摘要均与清单不同\n- `half-finished`：当前版本 rev=1，完整可读，优先级=normal\n  - 块 0：有效副本 3/3；可信节点 a,b,c；状态 [a/boot1:valid；b/boot1:valid；c/boot1:valid]\n- `process-archive`：当前版本 rev=1，完整可读，优先级=high\n  - 块 0：有效副本 3/3；可信节点 a,b,c；状态 [a/boot1:valid；b/boot1:valid；c/boot1:valid]\n  - 块 1：有效副本 3/3；可信节点 a,b,c；状态 [a/boot1:valid；b/boot1:valid；c/boot1:valid]\n\n## 缺少有效副本的块\n- `cannot-yet-recover` rev=1 block=0：`all_placement_replicas_corrupt` 预定副本节点上的所有已知字节摘要均与清单不同\n\n## 最新一次修复\n- 作业 `fix-half` / half-finished rev=1 block=0\n- 结论：**有效**；状态 `verified`；原因代码 `restart_verified_from_actual_disk`\n- 说明：重启后直接哈希实际落盘块，摘要与预定块身份一致\n- 来源：a boot=1；目标：b 预定 boot=1\n- 代次检查：current_target_boot_match=是，current_version_fence=是，planned_boot_match=是，same_block_identity=是，same_object_version=是，source_verified=是\n\n## 修复领取顺序\n- [normal] `cannot-yet-recover` rev=1 block=0 无已校验来源 -> 无目标（no_verified_source）\n",
+  "missing_blocks": [
+    {
+      "block": 0,
+      "details": [
+        {
+          "at": null,
+          "boot": 1,
+          "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+          "node": "a",
+          "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+          "reason_code": "digest_mismatch",
+          "seq": 69,
+          "source": "restart_scan",
+          "status": "corrupt",
+          "trusted": false
+        },
+        {
+          "at": null,
+          "boot": 1,
+          "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+          "node": "b",
+          "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+          "reason_code": "digest_mismatch",
+          "seq": 73,
+          "source": "restart_scan",
+          "status": "corrupt",
+          "trusted": false
+        },
+        {
+          "boot": 1,
+          "node": "c",
+          "reason_code": "no_observation",
+          "status": "absent",
+          "trusted": false
+        }
+      ],
+      "digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+      "key": "cannot-yet-recover",
+      "reason": "预定副本节点上的所有已知字节摘要均与清单不同",
+      "reason_code": "all_placement_replicas_corrupt",
+      "rev": 1
+    }
+  ],
+  "node_generations": {
+    "a": {
+      "boots": [
+        1
+      ],
+      "current_boot": 1
+    },
+    "b": {
+      "boots": [
+        1
+      ],
+      "current_boot": 1
+    },
+    "c": {
+      "boots": [
+        1
+      ],
+      "current_boot": 1
+    }
+  },
+  "object_filter": null,
+  "objects": [
+    {
+      "blocks": {
+        "0": {
+          "block": 0,
+          "desired_count": 2,
+          "digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+          "lacks_any_valid_copy": true,
+          "missing_copy_nodes": [
+            "a",
+            "b"
+          ],
+          "missing_reason": {
+            "code": "all_placement_replicas_corrupt",
+            "message": "预定副本节点上的所有已知字节摘要均与清单不同"
+          },
+          "placement_count": 2,
+          "placement_nodes": [
+            "a",
+            "b"
+          ],
+          "readable": false,
+          "replicas": [
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+              "node": "a",
+              "observed_digest": "eda36b1f367ca77e3b1bd78e58e3fa863a511ef43379fc77cf7eae278252a724",
+              "reason_code": "digest_mismatch",
+              "seq": 69,
+              "source": "restart_scan",
+              "status": "corrupt",
+              "trusted": false
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "34a989eb3e220e6b0b19fcb3c08c06f3a5eb237313b66b5766fa6e629783a7d5",
+              "node": "b",
+              "observed_digest": "ff2848b9ff35b75616ee5f3086228b8d2522f03caa64e6958e0a79b3d81fdba4",
+              "reason_code": "digest_mismatch",
+              "seq": 73,
+              "source": "restart_scan",
+              "status": "corrupt",
+              "trusted": false
+            },
+            {
+              "boot": 1,
+              "node": "c",
+              "reason_code": "no_observation",
+              "status": "absent",
+              "trusted": false
+            }
+          ],
+          "target_valid_count": 0,
+          "trusted_nodes": [],
+          "under_replicated": true,
+          "untrusted_replica_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "valid_count": 0
+        }
+      },
+      "blocks_with_missing_replica": [
+        0
+      ],
+      "blocks_without_any_valid_copy": [
+        0
+      ],
+      "committed": true,
+      "current_rev": 1,
+      "key": "cannot-yet-recover",
+      "latest_repair": null,
+      "manifest_digest": "e78101d3dfa441804447bd84b39764d0bc68f5dad1482604799b7c72dc293c79",
+      "priority": "normal",
+      "readable": false
+    },
+    {
+      "blocks": {
+        "0": {
+          "block": 0,
+          "desired_count": 3,
+          "digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+          "lacks_any_valid_copy": false,
+          "missing_copy_nodes": [],
+          "missing_reason": null,
+          "placement_count": 3,
+          "placement_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "readable": true,
+          "replicas": [
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+              "node": "a",
+              "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+              "reason_code": "hash_verified",
+              "seq": 70,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+              "node": "b",
+              "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+              "reason_code": "hash_verified",
+              "seq": 74,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+              "node": "c",
+              "observed_digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+              "reason_code": "hash_verified",
+              "seq": 77,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            }
+          ],
+          "target_valid_count": 3,
+          "trusted_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "under_replicated": false,
+          "untrusted_replica_nodes": [],
+          "valid_count": 3
+        }
+      },
+      "blocks_with_missing_replica": [],
+      "blocks_without_any_valid_copy": [],
+      "committed": true,
+      "current_rev": 1,
+      "key": "half-finished",
+      "latest_repair": {
+        "batch_status": "verified",
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": true,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 34,
+        "completed_seq": null,
+        "digest": "d4e301b036c21f2e708573a7d16b11ff2883c6547aa6e5760f113a9ccd70d308",
+        "expected_target_boot": 1,
+        "is_stale": false,
+        "is_valid": true,
+        "item_id": "fix-half:half-finished:r1:b0:b",
+        "job_id": "fix-half",
+        "key": "half-finished",
+        "reason": "重启后直接哈希实际落盘块，摘要与预定块身份一致",
+        "reason_code": "restart_verified_from_actual_disk",
+        "rev": 1,
+        "source_boot": 1,
+        "source_node": "a",
+        "status": "verified",
+        "target_node": "b",
+        "verified_seq": 48
+      },
+      "manifest_digest": "df8858212d7623180f5b9b1b9de131084c4310f52f9757a45f64e107e9d136c8",
+      "priority": "normal",
+      "readable": true
+    },
+    {
+      "blocks": {
+        "0": {
+          "block": 0,
+          "desired_count": 3,
+          "digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+          "lacks_any_valid_copy": false,
+          "missing_copy_nodes": [],
+          "missing_reason": null,
+          "placement_count": 3,
+          "placement_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "readable": true,
+          "replicas": [
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+              "node": "a",
+              "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+              "reason_code": "hash_verified",
+              "seq": 71,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+              "node": "b",
+              "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+              "reason_code": "hash_verified",
+              "seq": 75,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+              "node": "c",
+              "observed_digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+              "reason_code": "hash_verified",
+              "seq": 78,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            }
+          ],
+          "target_valid_count": 3,
+          "trusted_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "under_replicated": false,
+          "untrusted_replica_nodes": [],
+          "valid_count": 3
+        },
+        "1": {
+          "block": 1,
+          "desired_count": 3,
+          "digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+          "lacks_any_valid_copy": false,
+          "missing_copy_nodes": [],
+          "missing_reason": null,
+          "placement_count": 3,
+          "placement_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "readable": true,
+          "replicas": [
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+              "node": "a",
+              "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+              "reason_code": "hash_verified",
+              "seq": 72,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+              "node": "b",
+              "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+              "reason_code": "hash_verified",
+              "seq": 76,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": null,
+              "boot": 1,
+              "expected_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+              "node": "c",
+              "observed_digest": "dd160a074b801353c225143cf20b3aa85e02649f25f100e98d8c7575447d8177",
+              "reason_code": "hash_verified",
+              "seq": 79,
+              "source": "restart_scan",
+              "status": "valid",
+              "trusted": true
+            }
+          ],
+          "target_valid_count": 3,
+          "trusted_nodes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "under_replicated": false,
+          "untrusted_replica_nodes": [],
+          "valid_count": 3
+        }
+      },
+      "blocks_with_missing_replica": [],
+      "blocks_without_any_valid_copy": [],
+      "committed": true,
+      "current_rev": 1,
+      "key": "process-archive",
+      "latest_repair": {
+        "batch_status": "verified",
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": true,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 19,
+        "completed_seq": null,
+        "digest": "55eb94bcfdb849580238d46a6bb2e0dc7a248c51795ab8eece723a052109876f",
+        "expected_target_boot": 1,
+        "is_stale": false,
+        "is_valid": true,
+        "item_id": "fix-process-archive:process-archive:r1:b0:c",
+        "job_id": "fix-process-archive",
+        "key": "process-archive",
+        "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+        "reason_code": "repair_verified",
+        "rev": 1,
+        "source_boot": 1,
+        "source_node": "a",
+        "status": "verified",
+        "target_node": "c",
+        "verified_seq": 25
+      },
+      "manifest_digest": "3095426c22104619c35b85a86c02e3d53a0dcf866aaad953f01fbf1a6853cd57",
+      "priority": "high",
+      "readable": true
+    }
+  ],
+  "repair_queue": [
+    {
+      "block": 0,
+      "key": "cannot-yet-recover",
+      "priority": "normal",
+      "reason_code": "no_verified_source",
+      "rev": 1,
+      "source": null,
+      "target": null,
+      "unreadable": true
+    }
+  ],
+  "root": "var/demo/cluster",
+  "scrub_report_count": 0
+}

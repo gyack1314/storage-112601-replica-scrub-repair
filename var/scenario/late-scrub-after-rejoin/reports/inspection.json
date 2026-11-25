@@ -1,0 +1,149 @@
+{
+  "current": {
+    "proof": {
+      "readable": true,
+      "rev": 1
+    }
+  },
+  "latest_repair": {
+    "batch_status": "verified",
+    "block": 0,
+    "checks": {
+      "current_target_boot_match": true,
+      "current_version_fence": true,
+      "planned_boot_match": true,
+      "same_block_identity": true,
+      "same_object_version": true,
+      "source_verified": true
+    },
+    "claimed_seq": 14,
+    "completed_seq": null,
+    "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+    "expected_target_boot": 1,
+    "is_stale": false,
+    "is_valid": true,
+    "item_id": "r2:proof:r1:b0:a",
+    "job_id": "r2",
+    "key": "proof",
+    "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+    "reason_code": "repair_verified",
+    "rev": 1,
+    "source_boot": 2,
+    "source_node": "b",
+    "status": "verified",
+    "target_node": "a",
+    "verified_seq": 18
+  },
+  "markdown": "# 副本存储值班记录\n\n查询对象：`proof`\n\n## 当前已提交版本\n- `proof`：当前版本 rev=1，完整可读，优先级=normal\n  - 块 0：有效副本 2/2；可信节点 a,b；状态 [a/boot1:valid；b/boot2:valid]\n\n## 缺少有效副本的块\n- 无：当前版本每块都有已校验可信副本\n\n## 最新一次修复\n- 作业 `r2` / proof rev=1 block=0\n- 结论：**有效**；状态 `verified`；原因代码 `repair_verified`\n- 说明：来源、对象版本、块身份、目标代次和独立摘要校验全部一致\n- 来源：b boot=2；目标：a 预定 boot=1\n- 代次检查：current_target_boot_match=是，current_version_fence=是，planned_boot_match=是，same_block_identity=是，same_object_version=是，source_verified=是\n\n## 修复领取顺序\n- 无待领取项\n",
+  "missing_blocks": [],
+  "node_generations": {
+    "a": {
+      "boots": [
+        1
+      ],
+      "current_boot": 1
+    },
+    "b": {
+      "boots": [
+        1,
+        2
+      ],
+      "current_boot": 2
+    }
+  },
+  "object_filter": "proof",
+  "objects": [
+    {
+      "blocks": {
+        "0": {
+          "block": 0,
+          "desired_count": 2,
+          "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+          "lacks_any_valid_copy": false,
+          "missing_copy_nodes": [],
+          "missing_reason": null,
+          "placement_count": 2,
+          "placement_nodes": [
+            "a",
+            "b"
+          ],
+          "readable": true,
+          "replicas": [
+            {
+              "at": 10,
+              "boot": 1,
+              "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+              "node": "a",
+              "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+              "reason_code": "hash_verified",
+              "seq": 19,
+              "source": "repair_verify",
+              "status": "valid",
+              "trusted": true
+            },
+            {
+              "at": 8,
+              "boot": 2,
+              "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+              "node": "b",
+              "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+              "reason_code": "hash_verified",
+              "seq": 15,
+              "source": "repair_claim",
+              "status": "valid",
+              "trusted": true
+            }
+          ],
+          "target_valid_count": 2,
+          "trusted_nodes": [
+            "a",
+            "b"
+          ],
+          "under_replicated": false,
+          "untrusted_replica_nodes": [],
+          "valid_count": 2
+        }
+      },
+      "blocks_with_missing_replica": [],
+      "blocks_without_any_valid_copy": [],
+      "committed": true,
+      "current_rev": 1,
+      "key": "proof",
+      "latest_repair": {
+        "batch_status": "verified",
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": true,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 14,
+        "completed_seq": null,
+        "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+        "expected_target_boot": 1,
+        "is_stale": false,
+        "is_valid": true,
+        "item_id": "r2:proof:r1:b0:a",
+        "job_id": "r2",
+        "key": "proof",
+        "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+        "reason_code": "repair_verified",
+        "rev": 1,
+        "source_boot": 2,
+        "source_node": "b",
+        "status": "verified",
+        "target_node": "a",
+        "verified_seq": 18
+      },
+      "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+      "priority": "normal",
+      "readable": true
+    }
+  ],
+  "repair_queue": [],
+  "root": "var/scenario/late-scrub-after-rejoin",
+  "scrub_report_count": 2
+}

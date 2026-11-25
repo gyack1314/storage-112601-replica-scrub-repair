@@ -1,0 +1,15 @@
+{"at": 0, "kind": "node", "record": {"boot": 1, "node": "a"}, "seq": 1}
+{"at": 0, "kind": "node", "record": {"boot": 1, "node": "b"}, "seq": 2}
+{"at": 1, "kind": "version", "record": {"blocks": {"0": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"}, "generation": null, "key": "proof", "rev": 1}, "seq": 3}
+{"at": 2, "kind": "stored", "record": {"block": 0, "boot": 1, "key": "proof", "node": "a", "rev": 1, "text": "ok"}, "seq": 4}
+{"at": 2, "kind": "stored", "record": {"block": 0, "boot": 1, "key": "proof", "node": "b", "rev": 1, "text": "ok"}, "seq": 5}
+{"at": 3, "kind": "commit", "record": {"generation": null, "key": "proof", "rev": 1}, "seq": 6}
+{"at": 4, "kind": "node", "record": {"boot": 2, "node": "b"}, "seq": 8}
+{"at": 5, "kind": "stored", "record": {"block": 0, "boot": 2, "key": "proof", "node": "b", "rev": 1, "text": "ok"}, "seq": 9}
+{"at": 6, "kind": "scrub", "record": {"block": 0, "boot": 1, "key": "proof", "node": "b", "rev": 1, "text": "bad"}, "seq": 11}
+{"at": 7, "kind": "scrub", "record": {"block": 0, "boot": 1, "key": "proof", "node": "a", "rev": 1, "text": "bad"}, "seq": 13}
+{"at": 8, "kind": "repair", "record": {"id": "r2", "items": [{"block": 0, "key": "proof", "rev": 1, "source": "b", "target": "a"}]}, "seq": 15}
+{"at": 9, "kind": "result", "record": {"boot": 1, "id": "r2", "rev": 1, "text": "ok"}, "seq": 17}
+{"at": 10, "kind": "verify", "record": {"id": "r2", "text": "ok"}, "seq": 19}
+{"at": 11, "kind": "inspect", "record": {"key": "proof", "scan": false}, "seq": 20}
+{"at": null, "kind": "inspect", "record": {"key": null, "scan": false}, "seq": 21}

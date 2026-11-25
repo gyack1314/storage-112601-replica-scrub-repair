@@ -1,9 +1,12 @@
 """读取存储端与调用方的仿真消息，保持到达顺序。"""
 
+from __future__ import annotations
+
 import argparse
 import json
 from collections import Counter
 from pathlib import Path
+from typing import Any
 
 
 def iter_messages(path, supported):
@@ -40,6 +43,18 @@ def summarize(directory):
             raise ValueError(f"{path.name} 没有消息")
         breakdown = "，".join(f"{kind} {counts[kind]}" for kind in sorted(counts))
         print(f"{path.name}　{sum(counts.values())} 条　{breakdown}")
+
+
+def replay_scenario(path: str | Path, root: str | Path, reset: bool = True) -> dict[str, Any]:
+    """Replay a JSONL scenario through the file-backed replica coordinator."""
+    from replica_store.replay import replay_file
+
+    return replay_file(path, root, reset=reset)
+
+
+# Descriptive aliases for callers/tests discovering the runner from this module.
+run_scenario = replay_scenario
+process_scenario = replay_scenario
 
 
 if __name__ == "__main__":

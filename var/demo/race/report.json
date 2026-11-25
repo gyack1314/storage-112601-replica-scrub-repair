@@ -1,0 +1,164 @@
+{
+  "current": {
+    "trace": {
+      "readable": true,
+      "rev": 2
+    }
+  },
+  "latest_repair": {
+    "batch_status": "stale",
+    "block": 0,
+    "checks": {
+      "current_target_boot_match": true,
+      "current_version_fence": false,
+      "planned_boot_match": true,
+      "same_block_identity": true,
+      "same_object_version": true,
+      "source_verified": true
+    },
+    "claimed_seq": 9,
+    "completed_seq": 14,
+    "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+    "expected_target_boot": 1,
+    "is_stale": true,
+    "is_valid": false,
+    "item_id": "r:trace:r1:b0:b",
+    "job_id": "r",
+    "key": "trace",
+    "reason": "检修期间已有更新写入代次发布；旧字节不得覆盖新版本",
+    "reason_code": "new_version_committed",
+    "rev": 1,
+    "source_boot": 1,
+    "source_node": "a",
+    "status": "stale",
+    "target_node": "b",
+    "verified_seq": null
+  },
+  "markdown": "# 副本存储值班记录\n\n\n## 当前已提交版本\n- `trace`：当前版本 rev=2，完整可读，优先级=normal\n  - 块 0：有效副本 1/2；可信节点 b；状态 [a/boot1:missing；b/boot1:valid]\n\n## 缺少有效副本的块\n- 无：当前版本每块都有已校验可信副本\n\n## 最新一次修复\n- 作业 `r` / trace rev=1 block=0\n- 结论：**过时**；状态 `stale`；原因代码 `new_version_committed`\n- 说明：检修期间已有更新写入代次发布；旧字节不得覆盖新版本\n- 来源：a boot=1；目标：b 预定 boot=1\n- 代次检查：current_target_boot_match=是，current_version_fence=否，planned_boot_match=是，same_block_identity=是，same_object_version=是，source_verified=是\n\n## 修复领取顺序\n- [normal] `trace` rev=2 block=0 b -> a（under_replicated）\n",
+  "missing_blocks": [],
+  "node_generations": {
+    "a": {
+      "boots": [
+        1
+      ],
+      "current_boot": 1
+    },
+    "b": {
+      "boots": [
+        1
+      ],
+      "current_boot": 1
+    }
+  },
+  "object_filter": null,
+  "objects": [
+    {
+      "blocks": {
+        "0": {
+          "block": 0,
+          "desired_count": 2,
+          "digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+          "lacks_any_valid_copy": false,
+          "missing_copy_nodes": [
+            "a"
+          ],
+          "missing_reason": null,
+          "placement_count": 2,
+          "placement_nodes": [
+            "a",
+            "b"
+          ],
+          "readable": true,
+          "replicas": [
+            {
+              "at": 11,
+              "boot": 1,
+              "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+              "node": "a",
+              "observed_digest": null,
+              "reason_code": "replica_file_missing",
+              "seq": 20,
+              "source": "read",
+              "status": "missing",
+              "trusted": false
+            },
+            {
+              "at": 11,
+              "boot": 1,
+              "expected_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+              "node": "b",
+              "observed_digest": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437",
+              "reason_code": "hash_verified",
+              "seq": 21,
+              "source": "read",
+              "status": "valid",
+              "trusted": true
+            }
+          ],
+          "target_valid_count": 1,
+          "trusted_nodes": [
+            "b"
+          ],
+          "under_replicated": true,
+          "untrusted_replica_nodes": [
+            "a"
+          ],
+          "valid_count": 1
+        }
+      },
+      "blocks_with_missing_replica": [
+        0
+      ],
+      "blocks_without_any_valid_copy": [],
+      "committed": true,
+      "current_rev": 2,
+      "key": "trace",
+      "latest_repair": {
+        "batch_status": "stale",
+        "block": 0,
+        "checks": {
+          "current_target_boot_match": true,
+          "current_version_fence": false,
+          "planned_boot_match": true,
+          "same_block_identity": true,
+          "same_object_version": true,
+          "source_verified": true
+        },
+        "claimed_seq": 9,
+        "completed_seq": 14,
+        "digest": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4",
+        "expected_target_boot": 1,
+        "is_stale": true,
+        "is_valid": false,
+        "item_id": "r:trace:r1:b0:b",
+        "job_id": "r",
+        "key": "trace",
+        "reason": "检修期间已有更新写入代次发布；旧字节不得覆盖新版本",
+        "reason_code": "new_version_committed",
+        "rev": 1,
+        "source_boot": 1,
+        "source_node": "a",
+        "status": "stale",
+        "target_node": "b",
+        "verified_seq": null
+      },
+      "manifest_digest": "38028ef253c3d8022611e5cf52ddca1a55aaea8652a4cd9c78f9588d1b649d5f",
+      "priority": "normal",
+      "readable": true
+    }
+  ],
+  "repair_queue": [
+    {
+      "block": 0,
+      "key": "trace",
+      "priority": "normal",
+      "reason_code": "under_replicated",
+      "rev": 2,
+      "source": "b",
+      "target": "a",
+      "unreadable": false
+    }
+  ],
+  "root": "var/demo/race",
+  "scrub_report_count": 1
+}

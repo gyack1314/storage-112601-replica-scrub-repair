@@ -1,0 +1,15 @@
+{"at": 0, "kind": "node", "record": {"boot": 1, "node": "a"}, "seq": 1}
+{"at": 0, "kind": "node", "record": {"boot": 1, "node": "b"}, "seq": 2}
+{"at": 1, "kind": "version", "record": {"blocks": {"0": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4"}, "generation": null, "key": "trace", "rev": 1}, "seq": 3}
+{"at": 2, "kind": "stored", "record": {"block": 0, "boot": 1, "key": "trace", "node": "a", "rev": 1, "text": "old"}, "seq": 4}
+{"at": 2, "kind": "stored", "record": {"block": 0, "boot": 1, "key": "trace", "node": "b", "rev": 1, "text": "old"}, "seq": 5}
+{"at": 3, "kind": "commit", "record": {"generation": null, "key": "trace", "rev": 1}, "seq": 6}
+{"at": 4, "kind": "scrub", "record": {"block": 0, "boot": 1, "key": "trace", "node": "b", "rev": 1, "text": "bad"}, "seq": 8}
+{"at": 5, "kind": "repair", "record": {"id": "r", "items": [{"block": 0, "key": "trace", "rev": 1, "source": "a", "target": "b"}]}, "seq": 10}
+{"at": 6, "kind": "version", "record": {"blocks": {"0": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"}, "generation": null, "key": "trace", "rev": 2}, "seq": 11}
+{"at": 7, "kind": "stored", "record": {"block": 0, "boot": 1, "key": "trace", "node": "b", "rev": 2, "text": "new"}, "seq": 12}
+{"at": 8, "kind": "commit", "record": {"generation": null, "key": "trace", "rev": 2}, "seq": 13}
+{"at": 9, "kind": "result", "record": {"boot": 1, "id": "r", "rev": 1, "text": "old"}, "seq": 15}
+{"at": 10, "kind": "restart", "record": {}, "seq": 19}
+{"at": 11, "kind": "read", "record": {"block": 0, "key": "trace", "ok": true, "rev": 2}, "seq": 21}
+{"at": null, "kind": "inspect", "record": {"key": null, "scan": false}, "seq": 22}

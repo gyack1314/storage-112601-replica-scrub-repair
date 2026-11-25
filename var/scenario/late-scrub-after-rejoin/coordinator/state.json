@@ -1,0 +1,545 @@
+{
+  "inspections": [
+    {
+      "at": 11,
+      "key": "proof",
+      "seq": 20
+    },
+    {
+      "at": null,
+      "key": null,
+      "seq": 21
+    }
+  ],
+  "job_order": [
+    "r2"
+  ],
+  "jobs": {
+    "r2": {
+      "claimed_at": 8,
+      "claimed_seq": 14,
+      "id": "r2",
+      "items": [
+        {
+          "attempts": [
+            {
+              "at": 9,
+              "checks": {
+                "current_target_boot_match": true,
+                "current_version_fence": true,
+                "planned_boot_match": true,
+                "same_block_identity": true,
+                "same_object_version": true,
+                "source_verified": true
+              },
+              "recorded": {
+                "boot": 1,
+                "id": "r2",
+                "rev": 1,
+                "text": "ok"
+              },
+              "seq": 16
+            }
+          ],
+          "block": 0,
+          "checks": {
+            "current_target_boot_match": true,
+            "current_version_fence": true,
+            "planned_boot_match": true,
+            "same_block_identity": true,
+            "same_object_version": true,
+            "source_verified": true
+          },
+          "claimed_at": 8,
+          "claimed_current_rev": 1,
+          "claimed_seq": 14,
+          "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+          "expected_target_boot": 1,
+          "fence": "r2:14:0",
+          "fence_current_rev": 1,
+          "historical": false,
+          "is_stale": false,
+          "is_valid": true,
+          "item_id": "r2:proof:r1:b0:a",
+          "key": "proof",
+          "latest_seq": 16,
+          "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+          "reason_code": "repair_verified",
+          "result": {
+            "at": 9,
+            "boot": 1,
+            "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "rev": 1,
+            "seq": 16
+          },
+          "rev": 1,
+          "source_boot": 2,
+          "source_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+          "source_node": "b",
+          "source_verified": true,
+          "status": "verified",
+          "target_node": "a",
+          "verification": {
+            "at": 10,
+            "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "seq": 18
+          },
+          "verified_at": 10,
+          "verified_seq": 18
+        }
+      ],
+      "kind": "repair_batch",
+      "latest_seq": 16,
+      "priority": "normal",
+      "status": "verified"
+    }
+  },
+  "last_report": {
+    "current": {
+      "proof": {
+        "readable": true,
+        "rev": 1
+      }
+    },
+    "latest_repair": {
+      "batch_status": "verified",
+      "block": 0,
+      "checks": {
+        "current_target_boot_match": true,
+        "current_version_fence": true,
+        "planned_boot_match": true,
+        "same_block_identity": true,
+        "same_object_version": true,
+        "source_verified": true
+      },
+      "claimed_seq": 14,
+      "completed_seq": null,
+      "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+      "expected_target_boot": 1,
+      "is_stale": false,
+      "is_valid": true,
+      "item_id": "r2:proof:r1:b0:a",
+      "job_id": "r2",
+      "key": "proof",
+      "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+      "reason_code": "repair_verified",
+      "rev": 1,
+      "source_boot": 2,
+      "source_node": "b",
+      "status": "verified",
+      "target_node": "a",
+      "verified_seq": 18
+    },
+    "missing_blocks": [],
+    "node_generations": {
+      "a": {
+        "boots": [
+          1
+        ],
+        "current_boot": 1
+      },
+      "b": {
+        "boots": [
+          1,
+          2
+        ],
+        "current_boot": 2
+      }
+    },
+    "object_filter": null,
+    "objects": [
+      {
+        "blocks": {
+          "0": {
+            "block": 0,
+            "desired_count": 2,
+            "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+            "lacks_any_valid_copy": false,
+            "missing_copy_nodes": [],
+            "missing_reason": null,
+            "placement_count": 2,
+            "placement_nodes": [
+              "a",
+              "b"
+            ],
+            "readable": true,
+            "replicas": [
+              {
+                "at": 10,
+                "boot": 1,
+                "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                "node": "a",
+                "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                "reason_code": "hash_verified",
+                "seq": 19,
+                "source": "repair_verify",
+                "status": "valid",
+                "trusted": true
+              },
+              {
+                "at": 8,
+                "boot": 2,
+                "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                "node": "b",
+                "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                "reason_code": "hash_verified",
+                "seq": 15,
+                "source": "repair_claim",
+                "status": "valid",
+                "trusted": true
+              }
+            ],
+            "target_valid_count": 2,
+            "trusted_nodes": [
+              "a",
+              "b"
+            ],
+            "under_replicated": false,
+            "untrusted_replica_nodes": [],
+            "valid_count": 2
+          }
+        },
+        "blocks_with_missing_replica": [],
+        "blocks_without_any_valid_copy": [],
+        "committed": true,
+        "current_rev": 1,
+        "key": "proof",
+        "latest_repair": {
+          "batch_status": "verified",
+          "block": 0,
+          "checks": {
+            "current_target_boot_match": true,
+            "current_version_fence": true,
+            "planned_boot_match": true,
+            "same_block_identity": true,
+            "same_object_version": true,
+            "source_verified": true
+          },
+          "claimed_seq": 14,
+          "completed_seq": null,
+          "digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+          "expected_target_boot": 1,
+          "is_stale": false,
+          "is_valid": true,
+          "item_id": "r2:proof:r1:b0:a",
+          "job_id": "r2",
+          "key": "proof",
+          "reason": "来源、对象版本、块身份、目标代次和独立摘要校验全部一致",
+          "reason_code": "repair_verified",
+          "rev": 1,
+          "source_boot": 2,
+          "source_node": "b",
+          "status": "verified",
+          "target_node": "a",
+          "verified_seq": 18
+        },
+        "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+        "priority": "normal",
+        "readable": true
+      }
+    ],
+    "repair_queue": [],
+    "root": "var/scenario/late-scrub-after-rejoin",
+    "scrub_report_count": 2
+  },
+  "locks": {
+    "a|proof|1|0": {
+      "fence": "r2:14:0",
+      "item_id": "r2:proof:r1:b0:a",
+      "job_id": "r2",
+      "status": "completed"
+    }
+  },
+  "nodes": {
+    "a": {
+      "boots": [
+        {
+          "at": 0,
+          "boot": 1,
+          "seq": 1
+        }
+      ],
+      "current_boot": 1,
+      "replicas": {
+        "proof": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": 2,
+                  "boot": 1,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "historical_generation": false,
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "reported_boot": 1,
+                  "seq": 4,
+                  "source": "stored",
+                  "verified": true,
+                  "write_report_only": false
+                },
+                {
+                  "at": 7,
+                  "boot": 1,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "historical_generation": false,
+                  "matches": false,
+                  "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+                  "present": true,
+                  "reported_digest": null,
+                  "scrub_range": [
+                    0,
+                    1
+                  ],
+                  "seq": 12,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "at": 9,
+                  "boot": 1,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "seq": 17,
+                  "source": "repair_result",
+                  "verified": false,
+                  "write_report_only": true
+                },
+                {
+                  "at": 10,
+                  "boot": 1,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "seq": 19,
+                  "source": "repair_verify",
+                  "verified": true
+                }
+              ],
+              "key": "proof",
+              "last_seq": 19,
+              "node": "a",
+              "rev": 1
+            }
+          }
+        }
+      }
+    },
+    "b": {
+      "boots": [
+        {
+          "at": 0,
+          "boot": 1,
+          "seq": 2
+        },
+        {
+          "at": 4,
+          "boot": 2,
+          "seq": 7
+        }
+      ],
+      "current_boot": 2,
+      "replicas": {
+        "proof": {
+          "1": {
+            "0": {
+              "block": 0,
+              "history": [
+                {
+                  "at": 2,
+                  "boot": 1,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "historical_generation": false,
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "reported_boot": 1,
+                  "seq": 5,
+                  "source": "stored",
+                  "verified": true,
+                  "write_report_only": false
+                },
+                {
+                  "actual_scan": true,
+                  "at": 4,
+                  "boot": 2,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "seq": 8,
+                  "size": 2,
+                  "source": "restart_scan",
+                  "verified": true
+                },
+                {
+                  "at": 5,
+                  "boot": 2,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "historical_generation": false,
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "reported_boot": 2,
+                  "seq": 9,
+                  "source": "stored",
+                  "verified": true,
+                  "write_report_only": false
+                },
+                {
+                  "at": 6,
+                  "boot": 1,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "historical_generation": true,
+                  "matches": false,
+                  "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+                  "present": true,
+                  "reported_digest": null,
+                  "scrub_range": [
+                    0,
+                    1
+                  ],
+                  "seq": 10,
+                  "source": "scrub",
+                  "verified": true
+                },
+                {
+                  "at": 8,
+                  "boot": 2,
+                  "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "matches": true,
+                  "observed_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+                  "present": true,
+                  "seq": 15,
+                  "source": "repair_claim",
+                  "verified": true
+                }
+              ],
+              "key": "proof",
+              "last_seq": 15,
+              "node": "b",
+              "rev": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "objects": {
+    "proof": {
+      "current_rev": 1,
+      "missing_history": [],
+      "missing_reasons": {},
+      "priority": "normal",
+      "versions": {
+        "1": {
+          "blocks": {
+            "0": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"
+          },
+          "commit_seq": 6,
+          "committed": true,
+          "committed_at": 3,
+          "generation": "proof@1:193c0ce7b838",
+          "key": "proof",
+          "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+          "placement": [
+            "a",
+            "b"
+          ],
+          "proposed_at": 1,
+          "proposed_seq": 3,
+          "rev": 1
+        }
+      }
+    }
+  },
+  "read_results": [],
+  "restarts": 0,
+  "schema": 1,
+  "scrub_reports": [
+    {
+      "active_boot": 2,
+      "at": 6,
+      "blocks": [
+        {
+          "block": 0,
+          "classification": "historical_generation",
+          "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+          "matches": false,
+          "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+          "range": [
+            0,
+            1
+          ]
+        }
+      ],
+      "boot": 1,
+      "byte_range": null,
+      "decision": "archived_as_old_node_generation",
+      "historical_generation": true,
+      "key": "proof",
+      "node": "b",
+      "object_binding": {
+        "key": "proof",
+        "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+        "rev": 1
+      },
+      "range": [
+        0,
+        1
+      ],
+      "reason_code": "stale_boot_report",
+      "requested_interval": [
+        0,
+        1
+      ],
+      "rev": 1,
+      "seq": 11
+    },
+    {
+      "active_boot": 1,
+      "at": 7,
+      "blocks": [
+        {
+          "block": 0,
+          "classification": "current_generation",
+          "expected_digest": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df",
+          "matches": false,
+          "observed_digest": "2f05d4b689d270cafb02285f35f44866f7dc8a2d368a3f9d1124373eeab31fb1",
+          "range": [
+            0,
+            1
+          ]
+        }
+      ],
+      "boot": 1,
+      "byte_range": null,
+      "decision": "isolated_mismatching_replicas",
+      "historical_generation": false,
+      "key": "proof",
+      "node": "a",
+      "object_binding": {
+        "key": "proof",
+        "manifest_digest": "193c0ce7b838af98473127d1478f93bc62316c9b0a224624febe6bd7c15f91c9",
+        "rev": 1
+      },
+      "range": [
+        0,
+        1
+      ],
+      "reason_code": "digest_mismatch",
+      "requested_interval": [
+        0,
+        1
+      ],
+      "rev": 1,
+      "seq": 13
+    }
+  ],
+  "sequence": 21
+}
